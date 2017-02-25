@@ -11,10 +11,8 @@
 
                 if ($logged === 'yes'){
                     echo '<li><a href="log-out.php">Log out</a></li>';
-                }
-
-                if ($logged === 'no'){
-                    echo '<li><a href="log-in.php">Log in</a></li>';
+                } else if ($logged === 'no'){
+                    echo '<li><a href="log-in.php">Log in</a></li><li><a href="register.php">Register</a></li>';
                 }
             ?>
         </ul>

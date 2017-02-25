@@ -19,7 +19,7 @@ if (isset($_POST['submit'])){
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My website: Contact me</title>
+    <title>My website: Log in</title>
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
