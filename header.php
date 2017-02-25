@@ -1,8 +1,3 @@
-<?php
-if (!isset($_COOKIE['Logged-in'])){
-    header("Location: cookies.php");
-}
-?>
 <header>
     <nav>
         <ul>

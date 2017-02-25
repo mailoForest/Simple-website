@@ -1,3 +1,8 @@
+<?php
+if (!isset($_COOKIE['Logged-in'])){
+    header("Location: cookies.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
