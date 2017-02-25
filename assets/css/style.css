@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+li{
+		list-style-type: none;
+		display: inline-block;
+		padding: 0% 5% 0% 5%;
+}
+ul{
+	text-align: center;
+	margin: 0;
+	padding-top: 2%
+}	
+header{
+	background-color: #f4d3a8;
+	height: 5em;
+}
+body{
+	margin: 0;
+	background-color: #FCF2DE;
+}
+section{
+	margin: 3% 15%;
+	padding: 3% 5%;
+	background-color: #f4d3a8;
+}
+img{
+	height: 20em;
+}
+div, figure{
+	padding-bottom: 2%;
+}
+figcaption{
+	margin-bottom: 1em;
+}
+a{
+	text-decoration: none;
+}
