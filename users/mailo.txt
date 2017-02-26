@@ -1,0 +1,6 @@
+Name=Kaloyan
+Surname=Petrov
+Age=22
+City=Sofia
+Email=kaloyan_petrov1994@abv.bg
+Password=e3785479e9118487a4d33e926eaafb30dc7efeb0

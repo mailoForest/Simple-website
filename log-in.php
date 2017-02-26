@@ -2,16 +2,27 @@
     function post($index){
         return $_POST[$index];
     }
-    $name = 'Pepi';
-    $password = 'pepi123';
+    function getPassword($username){
+        $pass = strstr(file_get_contents("users/$username.txt"), 'Password=');
+        $pass = str_replace('Password=', '', $pass);
+        return $pass;
+    }
+    $username = '';
+    $password = '';
     $wrong = '';
 
-if (isset($_POST['submit'])){
-        if (post('name') === $name && post('pass') === $password){
+    if (isset($_POST['submit'])){
+
+        $username = post('username');
+        $password = post('pass');
+
+        if (file_exists("users/$username.txt") && sha1($password) === getPassword($username)) {
             setcookie("Logged-in", 'yes');
             header('Location: index.php');
+        } else if (!file_exists("users/$username.txt")){
+            $wrong = 'You have entered wrong username! If you do not have an account <a href="register.php">sign up</a> <strong>NOW!</strong>. :)';
         } else {
-            $wrong = 'Wrong password or username!';
+            $wrong = 'Wrong password!';
         }
     }
 ?>
@@ -25,11 +36,9 @@ if (isset($_POST['submit'])){
 <body>
 <?php include 'header.php'?>
 <section>
-    <h3>Само Пепи има достъп! Хаха!</h3>
-    <p><em>name = Pepi <br> pass = pepi123</em></p>
     <form action="" method="post">
-        <div><label for="name">Name:</label></div>
-        <div><input type="text" name="name" id="name"></div>
+        <div><label for="username">Username:</label></div>
+        <div><input type="text" name="username" id="username" value="<?=$username?>"></div>
         <div><label for="pass">Password:</label></div>
         <div><input type="password" name="pass" id="pass"></div>
         <input type="submit" name="submit" value="Log in">
